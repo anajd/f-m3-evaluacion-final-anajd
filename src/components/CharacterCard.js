@@ -39,7 +39,8 @@ class CharacterCard extends React.Component {
 }
 
 CharacterCard.propTypes = {
-  item: PropTypes.array
+  resetFilters: PropTypes.func,
+  characters: PropTypes.array
 };
 
 export default CharacterCard;
