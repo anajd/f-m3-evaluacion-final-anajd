@@ -5,6 +5,7 @@ import Filters from './components/Filters';
 import { Switch, Route } from 'react-router-dom';
 import CharacterCard from './components/CharacterCard';
 import CharacterList from './components/CharacterList';
+import HarryPotterLogo from './images/HarryPotterLogo.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,6 +54,15 @@ class App extends React.Component {
     const { characters, filterName } = this.state;
     return (
       <div className="App">
+        <header className="app__header">
+          <div className="header__img--container">
+            <img
+              className="header__title"
+              src={HarryPotterLogo}
+              alt="Harry Potter logo"
+            />
+          </div>
+        </header>
         <Switch>
           <Route
             exact
