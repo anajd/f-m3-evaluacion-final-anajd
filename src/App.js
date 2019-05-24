@@ -64,10 +64,9 @@ class App extends React.Component {
             path="/detail/:character"
             render={takeParams => (
               <CharacterCard
-                parametros={takeParams}
+                takeParams={takeParams}
                 characters={characters}
                 filterName={filterName}
-                handleFilterName={handleFilterName}
               />
             )}
           />

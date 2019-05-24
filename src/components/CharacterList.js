@@ -14,17 +14,14 @@ class CharacterList extends React.Component {
             return (
               <li className="character__item" key={item.id}>
                 <div className="character__div">
-                  {/* // Dentro del h2 va el link para la tarjeta de detalles de los
-            personajes */}
-                  <Link to={`/detail/${item.id}`}>
-                    <h2 className="character__name">{item.name}</h2>
-                  </Link>
+                  <h2 className="character__name">{item.name}</h2>
                   <h3 className="character__house">{item.house}</h3>
                   <img
                     className="charcter__image"
                     src={item.image}
                     alt={item.name}
                   />
+                  <Link to={`/detail/${item.id}`}>Ver más</Link>
                 </div>
               </li>
             );

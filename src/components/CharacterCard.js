@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 class CharacterCard extends React.Component {
   render() {
     const { characters } = this.props;
-    const id = this.props.parametros.match.params.character;
-    const character = characters.find(item => item.id === id);
+    const id = parseInt(this.props.takeParams.match.params.character);
+    const findCharacter = characters.find(item => item.id === id);
 
     return (
       <React.Fragment>
-        {character ? (
+        {findCharacter !== undefined ? (
           <div className="character__detail">
-            <p>Soy un detalle de {character.name}.</p>
+            <p>Soy un detalle de {findCharacter.name}.</p>
           </div>
         ) : (
           <p>Po va ser que no</p>
