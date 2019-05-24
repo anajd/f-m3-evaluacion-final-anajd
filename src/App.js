@@ -8,11 +8,10 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      filerName: ''
+      filterName: ''
     };
 
     this.handleFilterName = this.handleFilterName.bind(this);
-    this.paintFilterArray = this.paintFilterArray.bind(this);
   }
 
   componentDidMount() {
@@ -39,23 +38,23 @@ class App extends React.Component {
     });
   }
 
-  //Esta funcion va en el componente del input
-  paintFilterArray() {
-    const { characters, filterName } = this.state;
-    return characters
-      .filter(item => item.name.includes(filterName))
-      .map(item => {
-        return (
-          // Dentro del li va el link para la tarjeta de detalles de los personajes
-          <li className="character" key={item.id}>
-            {item.name}
-          </li>
-        );
-      });
-  }
+  // //Esta funcion va en el componente del input
+  // paintFilterArray() {
+  //   const { characters, filterName } = this.state;
+  //   return characters
+  //     .filter(item => item.name.includes(filterName))
+  //     .map(item => {
+  //       return (
+  //         // Dentro del li va el link para la tarjeta de detalles de los personajes
+  //         <li className="character" key={item.id}>
+  //           {item.name}
+  //         </li>
+  //       );
+  //     });
+  // }
 
   render() {
-    const { characters } = this.state;
+    const { characters, filterName } = this.state;
     return (
       <div className="App">
         <div className="character__input">
@@ -70,19 +69,21 @@ class App extends React.Component {
           />
         </div>
         <ul className="characters__list">
-          {characters.map(item => {
-            return (
-              <li className="character" key={item.id}>
-                <h2 className="character__name">{item.name}</h2>
-                <h3 className="character__house">{item.house}</h3>
-                <img
-                  className="charcter__image"
-                  src={item.image}
-                  alt={item.name}
-                />
-              </li>
-            );
-          })}
+          {characters
+            .filter(item => item.name.includes(filterName))
+            .map(item => {
+              return (
+                <li className="character" key={item.id}>
+                  <h2 className="character__name">{item.name}</h2>
+                  <h3 className="character__house">{item.house}</h3>
+                  <img
+                    className="charcter__image"
+                    src={item.image}
+                    alt={item.name}
+                  />
+                </li>
+              );
+            })}
         </ul>
       </div>
     );
