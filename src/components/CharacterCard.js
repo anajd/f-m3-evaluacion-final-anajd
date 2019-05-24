@@ -9,12 +9,23 @@ class CharacterCard extends React.Component {
 
     return (
       <React.Fragment>
-        {findCharacter !== undefined ? (
+        {findCharacter ? (
           <div className="character__detail">
-            <p>Soy un detalle de {findCharacter.name}.</p>
+            <div className="character__img--container">
+              <img src={findCharacter.image} alt={findCharacter.name} />
+            </div>
+            <div className="character__description--container">
+              <h2 className="character__name">{findCharacter.name}</h2>
+              <p className="character__house">{findCharacter.house}</p>
+              <p className="character__birth">{findCharacter.dateOfBirth}</p>
+              <p className="character__patronus">{findCharacter.patronus}</p>
+              <p className="character__alive">
+                {findCharacter.alive === true ? 'Vivo' : 'Muerto'}
+              </p>
+            </div>
           </div>
         ) : (
-          <p>Po va ser que no</p>
+          <p>Po' va ser que no ta' salio</p>
         )}
       </React.Fragment>
     );
