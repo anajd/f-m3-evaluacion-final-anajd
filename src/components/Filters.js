@@ -8,7 +8,7 @@ class Filters extends React.Component {
       .filter(item => item.name.includes(filterName))
       .map(item => {
         return (
-          <li className="character" key={item.id}>
+          <li className="character__item" key={item.id}>
             <CharacterList item={item} />
           </li>
         );

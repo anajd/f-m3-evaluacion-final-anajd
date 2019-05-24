@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import { FetchCharacters } from './services/FetchCharacters';
 import Filters from './components/Filters';
+import CharacterCard from './components/CharacterCard';
 
 class App extends React.Component {
   constructor(props) {

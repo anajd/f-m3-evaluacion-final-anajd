@@ -3,6 +3,7 @@ import React from 'react';
 class CharacterCard extends React.Component {
   render() {
     const { item } = this.props;
+    const id = this.props.parametros.match.params.character;
     const character = item.find(item => item.id === id);
     return (
       <React.Fragment>
