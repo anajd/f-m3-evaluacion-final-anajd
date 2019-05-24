@@ -34,8 +34,14 @@ class App extends React.Component {
         <ul className="characters__list">
           {characters.map(item => {
             return (
-              <li className="characters" key={item.id}>
-                {item.name} {item.house} {item.image}
+              <li className="character" key={item.id}>
+                <h2 className="character__name">{item.name}</h2>
+                <h3 className="character__house">{item.house}</h3>
+                <img
+                  className="charcter__image"
+                  src={item.image}
+                  alt={item.name}
+                />
               </li>
             );
           })}
