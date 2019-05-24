@@ -8,8 +8,11 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      filerName: []
+      filerName: ''
     };
+
+    this.handleFilterName = this.handleFilterName.bind(this);
+    this.paintFilterArray = this.paintFilterArray.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +39,21 @@ class App extends React.Component {
     });
   }
 
+  //Esta funcion va en el componente del input
+  paintFilterArray() {
+    const { characters, filterName } = this.state;
+    return characters
+      .filter(item => item.name.includes(filterName))
+      .map(item => {
+        return (
+          // Dentro del li va el link para la tarjeta de detalles de los personajes
+          <li className="character" key={item.id}>
+            {item.name}
+          </li>
+        );
+      });
+  }
+
   render() {
     const { characters } = this.state;
     return (
@@ -46,10 +64,9 @@ class App extends React.Component {
             className="character__input"
             type="text"
             name="name"
-            value=""
             id="name"
             placeholder="Escribe el nombre de tu personaje favorito"
-            onChange=""
+            onChange={this.handleFilterName}
           />
         </div>
         <ul className="characters__list">
