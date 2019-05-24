@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 class CharacterCard extends React.Component {
   render() {
-    const { item } = this.props;
+    const { characters } = this.props;
     const id = this.props.parametros.match.params.character;
-    const character = item.find(item => item.id === id);
+    const character = characters.find(item => item.id === id);
+
     return (
       <React.Fragment>
         {character ? (
@@ -13,7 +14,7 @@ class CharacterCard extends React.Component {
             <p>Soy un detalle de {character.name}.</p>
           </div>
         ) : (
-          <p>Esto es todo amigos</p>
+          <p>Po va ser que no</p>
         )}
       </React.Fragment>
     );

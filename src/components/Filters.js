@@ -4,22 +4,27 @@ import CharacterList from './CharacterList';
 
 class Filters extends React.Component {
   render() {
-    const { characters, filterName } = this.props;
-    return characters
-      .filter(item => item.name.includes(filterName))
-      .map(item => {
-        return (
-          <li className="character__item" key={item.id}>
-            <CharacterList item={item} />
-          </li>
-        );
-      });
+    const { handleFilterName } = this.props;
+    return (
+      <React.Fragment>
+        <div className="character__input">
+          <label className="character__input--title" htmlFor="name" />
+          <input
+            className="character__input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Escribe el nombre de tu personaje favorito"
+            onChange={handleFilterName}
+          />
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
 CharacterList.propTypes = {
-  characters: PropTypes.array,
-  filterName: PropTypes.string
+  handleFilterName: PropTypes.func
 };
 
 export default Filters;

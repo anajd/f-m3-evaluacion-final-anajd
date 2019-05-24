@@ -2,7 +2,9 @@ import React from 'react';
 import './App.scss';
 import { FetchCharacters } from './services/FetchCharacters';
 import Filters from './components/Filters';
+import { Switch, Route } from 'react-router-dom';
 import CharacterCard from './components/CharacterCard';
+import CharacterList from './components/CharacterList';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,39 +42,36 @@ class App extends React.Component {
     });
   }
 
-  // //Esta funcion va en el componente del input
-  // paintFilterArray() {
-  //   const { characters, filterName } = this.state;
-  //   return characters
-  //     .filter(item => item.name.includes(filterName))
-  //     .map(item => {
-  //       return (
-  //
-  //         <li className="character" key={item.id}>
-  //           {item.name}
-  //         </li>
-  //       );
-  //     });
-  // }
-
   render() {
     const { characters, filterName } = this.state;
     return (
       <div className="App">
-        <div className="character__input">
-          <label className="character__input--title" htmlFor="name" />
-          <input
-            className="character__input"
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Escribe el nombre de tu personaje favorito"
-            onChange={this.handleFilterName}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <React.Fragment>
+                <Filters handleFilterName={this.handleFilterName} />
+                <CharacterList
+                  characters={characters}
+                  filterName={filterName}
+                />
+              </React.Fragment>
+            )}
           />
-        </div>
-        <ul className="characters__list">
-          <Filters characters={characters} filterName={filterName} />
-        </ul>
+          <Route
+            path="/detail/:character"
+            render={takeParams => (
+              <CharacterCard
+                parametros={takeParams}
+                characters={characters}
+                filterName={filterName}
+                handleFilterName={handleFilterName}
+              />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
