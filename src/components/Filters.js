@@ -16,6 +16,7 @@ class Filters extends React.Component {
             id="name"
             placeholder="Escribe el nombre de tu personaje favorito"
             onChange={handleFilterName}
+            pattern="[A-Za-z]+"
           />
         </div>
       </React.Fragment>
