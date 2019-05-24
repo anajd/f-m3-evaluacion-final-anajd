@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class CharacterCard extends React.Component {
   render() {
@@ -18,5 +19,9 @@ class CharacterCard extends React.Component {
     );
   }
 }
+
+CharacterCard.propTypes = {
+  item: PropTypes.array
+};
 
 export default CharacterCard;

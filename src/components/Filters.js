@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CharacterList from './CharacterList';
 
 class Filters extends React.Component {
@@ -17,13 +18,8 @@ class Filters extends React.Component {
 }
 
 CharacterList.propTypes = {
-  characters: PropTypes.array
-};
-
-CharacterList.propTypes = {
-  characters: Prop.array,
-  favPokemon: PropTypes.array,
-  handleFav: PropTypes.func
+  characters: PropTypes.array,
+  filterName: PropTypes.string
 };
 
 export default Filters;
