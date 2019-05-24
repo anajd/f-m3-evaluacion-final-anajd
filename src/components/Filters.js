@@ -16,4 +16,14 @@ class Filters extends React.Component {
   }
 }
 
+CharacterList.propTypes = {
+  characters: PropTypes.array
+};
+
+CharacterList.propTypes = {
+  characters: Prop.array,
+  favPokemon: PropTypes.array,
+  handleFav: PropTypes.func
+};
+
 export default Filters;
