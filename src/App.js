@@ -16,6 +16,7 @@ class App extends React.Component {
     };
 
     this.handleFilterName = this.handleFilterName.bind(this);
+    this.resetFilters = this.resetFilters.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +40,12 @@ class App extends React.Component {
 
     this.setState({
       filterName: characterName
+    });
+  }
+
+  resetFilters() {
+    this.setState({
+      filterName: ''
     });
   }
 
@@ -67,6 +74,7 @@ class App extends React.Component {
                 takeParams={takeParams}
                 characters={characters}
                 filterName={filterName}
+                resetFilters={this.resetFilters}
               />
             )}
           />

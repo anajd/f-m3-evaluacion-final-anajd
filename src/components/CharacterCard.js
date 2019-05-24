@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class CharacterCard extends React.Component {
+  componentWillUnmount() {
+    this.props.resetFilters();
+  }
+
   render() {
     const { characters } = this.props;
     const id = parseInt(this.props.takeParams.match.params.character);
@@ -23,6 +28,7 @@ class CharacterCard extends React.Component {
                 {findCharacter.alive === true ? 'Vivo' : 'Muerto'}
               </p>
             </div>
+            <Link to="/">Volver atrás</Link>
           </div>
         ) : (
           <p>Po' va ser que no ta' salio</p>
