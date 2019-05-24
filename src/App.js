@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { FetchCharacters } from './services/FetchCharacters';
+import Filters from './components/Filters';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class App extends React.Component {
   //     .filter(item => item.name.includes(filterName))
   //     .map(item => {
   //       return (
-  //         // Dentro del li va el link para la tarjeta de detalles de los personajes
+  //
   //         <li className="character" key={item.id}>
   //           {item.name}
   //         </li>
@@ -69,21 +70,7 @@ class App extends React.Component {
           />
         </div>
         <ul className="characters__list">
-          {characters
-            .filter(item => item.name.includes(filterName))
-            .map(item => {
-              return (
-                <li className="character" key={item.id}>
-                  <h2 className="character__name">{item.name}</h2>
-                  <h3 className="character__house">{item.house}</h3>
-                  <img
-                    className="charcter__image"
-                    src={item.image}
-                    alt={item.name}
-                  />
-                </li>
-              );
-            })}
+          <Filters characters={characters} filterName={filterName} />
         </ul>
       </div>
     );
