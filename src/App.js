@@ -7,7 +7,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      characters: []
+      characters: [],
+      filerName: []
     };
   }
 
@@ -27,10 +28,30 @@ class App extends React.Component {
     });
   }
 
+  handleFilterName(event) {
+    const characterName = event.currentTarget.value;
+
+    this.setState({
+      filterName: characterName
+    });
+  }
+
   render() {
     const { characters } = this.state;
     return (
       <div className="App">
+        <div className="character__input">
+          <label className="character__input--title" htmlFor="name" />
+          <input
+            className="character__input"
+            type="text"
+            name="name"
+            value=""
+            id="name"
+            placeholder="Escribe el nombre de tu personaje favorito"
+            onChange=""
+          />
+        </div>
         <ul className="characters__list">
           {characters.map(item => {
             return (
