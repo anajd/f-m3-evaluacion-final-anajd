@@ -20,15 +20,19 @@ class CharacterCard extends React.Component {
               <img src={findCharacter.image} alt={findCharacter.name} />
             </div>
             <div className="character__description--container">
-              <h2 className="character__name">{findCharacter.name}</h2>
-              <p className="character__house">{findCharacter.house}</p>
-              <p className="character__birth">{findCharacter.dateOfBirth}</p>
-              <p className="character__patronus">{findCharacter.patronus}</p>
+              <h2 className="character__name">Name: {findCharacter.name}</h2>
+              <p className="character__house">House: {findCharacter.house}</p>
+              <p className="character__birth">
+                Date of birth: {findCharacter.dateOfBirth}
+              </p>
+              <p className="character__patronus">
+                Patronus: {findCharacter.patronus}
+              </p>
               <p className="character__alive">
-                {findCharacter.alive === true ? 'Vivo' : 'Muerto'}
+                Alive: {findCharacter.alive === true ? 'Alive' : 'Die'}
               </p>
             </div>
-            <Link to="/">Volver atrás</Link>
+            <Link to="/">Go back</Link>
           </div>
         ) : (
           <p>Po' va ser que no ta' salio</p>

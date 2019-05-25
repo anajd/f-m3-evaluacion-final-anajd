@@ -7,14 +7,16 @@ class Filters extends React.Component {
     const { handleFilterName } = this.props;
     return (
       <React.Fragment>
-        <div className="character__input">
-          <label className="character__input--title" htmlFor="name" />
+        <div className="app__div--input">
+          <label className="app__input--label" htmlFor="name">
+            Find your favorite character
+          </label>
           <input
-            className="character__input"
+            className="app__input"
             type="text"
             name="name"
             id="name"
-            placeholder="Escribe el nombre de tu personaje favorito"
+            placeholder="Search"
             onChange={handleFilterName}
             pattern="[A-Za-z]+"
           />

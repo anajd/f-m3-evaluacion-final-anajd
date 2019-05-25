@@ -5,7 +5,6 @@ import Filters from './components/Filters';
 import { Switch, Route } from 'react-router-dom';
 import CharacterCard from './components/CharacterCard';
 import CharacterList from './components/CharacterList';
-import HarryPotterLogo from './images/HarryPotterLogo.png';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,42 +52,39 @@ class App extends React.Component {
   render() {
     const { characters, filterName } = this.state;
     return (
-      <div className="App">
+      <div className="app">
         <header className="app__header">
-          <div className="header__img--container">
-            <img
-              className="header__title"
-              src={HarryPotterLogo}
-              alt="Harry Potter logo"
-            />
-          </div>
+          <h1 className="header__title">Harry Potter Character's List</h1>
         </header>
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <React.Fragment>
-                <Filters handleFilterName={this.handleFilterName} />
-                <CharacterList
+        <main className="app__main">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => (
+                <React.Fragment>
+                  <Filters handleFilterName={this.handleFilterName} />
+                  <CharacterList
+                    characters={characters}
+                    filterName={filterName}
+                  />
+                </React.Fragment>
+              )}
+            />
+            <Route
+              path="/detail/:character"
+              render={takeParams => (
+                <CharacterCard
+                  takeParams={takeParams}
                   characters={characters}
                   filterName={filterName}
+                  resetFilters={this.resetFilters}
                 />
-              </React.Fragment>
-            )}
-          />
-          <Route
-            path="/detail/:character"
-            render={takeParams => (
-              <CharacterCard
-                takeParams={takeParams}
-                characters={characters}
-                filterName={filterName}
-                resetFilters={this.resetFilters}
-              />
-            )}
-          />
-        </Switch>
+              )}
+            />
+          </Switch>
+        </main>
+        <footer className="app__footer" />
       </div>
     );
   }
