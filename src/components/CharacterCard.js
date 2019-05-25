@@ -13,31 +13,65 @@ class CharacterCard extends React.Component {
     const findCharacter = characters.find(item => item.id === id);
 
     return (
-      <React.Fragment>
+      <div className="character__card">
         {findCharacter ? (
           <div className="character__detail">
-            <div className="character__img--container">
-              <img src={findCharacter.image} alt={findCharacter.name} />
+            <div className="character__img--wrapper">
+              <img
+                className="character__img"
+                src={findCharacter.image}
+                alt={findCharacter.name}
+              />
             </div>
-            <div className="character__description--container">
-              <h2 className="character__name">Name: {findCharacter.name}</h2>
-              <p className="character__house">House: {findCharacter.house}</p>
+            <div className="character__description">
+              <h2 className="character__name--detail">
+                Name:{' '}
+                <span className="subtitle__cursive">{findCharacter.name}</span>
+              </h2>
+              <p className="character__house--detail">
+                House:{' '}
+                <span className="subtitle__cursive">{findCharacter.house}</span>
+              </p>
               <p className="character__birth">
-                Date of birth: {findCharacter.dateOfBirth}
+                Birth:{' '}
+                <span className="subtitle__cursive">
+                  {findCharacter.dateOfBirth}
+                </span>
               </p>
               <p className="character__patronus">
-                Patronus: {findCharacter.patronus}
+                Patronus:{' '}
+                <span className="subtitle__cursive">
+                  {findCharacter.patronus}
+                </span>
               </p>
               <p className="character__alive">
-                Alive: {findCharacter.alive === true ? 'Alive' : 'Die'}
+                Alive:{' '}
+                <span className="subtitle__cursive">
+                  {findCharacter.alive === true ? 'Alive' : 'Die'}
+                </span>
               </p>
+              <Link className="link__back" to="/">
+                Go back
+              </Link>
             </div>
-            <Link to="/">Go back</Link>
+            <div className="character__description--wrapper">
+              <div
+                className={`character__house--wrapper character__${
+                  findCharacter.house === 'Gryffindor'
+                    ? 'gr'
+                    : findCharacter.house === 'Slytherin'
+                    ? 'sl'
+                    : findCharacter.house === 'Hufflepuff'
+                    ? 'hu'
+                    : 'ra'
+                }`}
+              />
+            </div>
           </div>
         ) : (
           <p>Po' va ser que no ta' salio</p>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }
