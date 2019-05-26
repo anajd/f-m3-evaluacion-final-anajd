@@ -41,7 +41,7 @@ class CharacterCard extends React.Component {
                 <span className="subtitle__cursive">
                   {findCharacter.dateOfBirth === ''
                     ? '-'
-                    : findCharacter.dateOfBirth}
+                    : findCharacter.yearOfBirth}
                 </span>
               </p>
               <p className="character__patronus">

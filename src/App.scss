@@ -71,7 +71,6 @@
 .character__item {
   color: black;
   text-align: center;
-  border: solid 1px black;
   border-radius: 4px;
   padding: 18px 15px 15px 15px;
   background-image: url("https://3.bp.blogspot.com/-IyZg8dxu6Xc/VvHw2z_Tc0I/AAAAAAAAFI4/spZ1ercKVCE3Ni7z6f2s4pEA2PN0_drSw/w1200-h630-p-k-no-nu/old-paper-texture.jpg");
@@ -125,14 +124,13 @@
   font-size: 15px;
   text-decoration: none;
   color: #2e5251;
-  border-top: solid 1px black;
 }
 
 //CharacterCard
 .character__card {
   display: flex;
   justify-content: center;
-  padding-top: 230px;
+  padding-top: 200px;
 }
 
 .character__detail {
