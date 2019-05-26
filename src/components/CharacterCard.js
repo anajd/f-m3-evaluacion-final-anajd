@@ -63,7 +63,9 @@ class CharacterCard extends React.Component {
             <div className="character__description--wrapper">
               <div
                 className={`character__house--wrapper character__${
-                  findCharacter.house === 'Gryffindor'
+                  findCharacter.house === ''
+                    ? 'none'
+                    : findCharacter.house === 'Gryffindor'
                     ? 'gr'
                     : findCharacter.house === 'Slytherin'
                     ? 'sl'

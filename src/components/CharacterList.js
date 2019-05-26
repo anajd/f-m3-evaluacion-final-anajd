@@ -27,8 +27,9 @@ class CharacterList extends React.Component {
                       />
                     </div>
                     <h2 className="character__name">{item.name}</h2>
-                    <h3 className="character__house">{item.house}</h3>
-
+                    <h3 className="character__house">
+                      {item.house === '' ? '-' : item.house}
+                    </h3>
                     <Link
                       className="character__card--link"
                       to={`/detail/${item.id}`}
