@@ -51,9 +51,9 @@ class CharacterCard extends React.Component {
                 </span>
               </p>
               <p className="character__alive">
-                Alive:{' '}
+                State:{' '}
                 <span className="subtitle__cursive">
-                  {findCharacter.alive === true ? 'Alive' : 'Die'}
+                  {findCharacter.alive === true ? 'Alive' : '💀'}
                 </span>
               </p>
               <Link className="link__back" to="/">
