@@ -5,7 +5,6 @@ import Filters from './components/Filters';
 import { Switch, Route } from 'react-router-dom';
 import CharacterCard from './components/CharacterCard';
 import CharacterList from './components/CharacterList';
-// import HarryPotterSoundtrack from './audio/HarryPotterSoundtrack.mp3';
 
 class App extends React.Component {
   constructor(props) {
@@ -86,7 +85,6 @@ class App extends React.Component {
           </Switch>
         </main>
         <footer className="app__footer">
-          {/* <audio autoPlay src={HarryPotterSoundtrack} id="pDst9A3sqis" /> */}
           <p>Copyright &copy; 2019 Ana JD.</p>
         </footer>
       </div>
