@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.scss';
 import { FetchCharacters } from './services/FetchCharacters';
-import Filters from './components/Filters';
 import { Switch, Route } from 'react-router-dom';
+import Home from './components/Home';
 import CharacterCard from './components/CharacterCard';
-import CharacterList from './components/CharacterList';
 
 class App extends React.Component {
   constructor(props) {
@@ -62,13 +61,11 @@ class App extends React.Component {
               exact
               path="/"
               render={() => (
-                <React.Fragment>
-                  <Filters handleFilterName={this.handleFilterName} />
-                  <CharacterList
-                    characters={characters}
-                    filterName={filterName}
-                  />
-                </React.Fragment>
+                <Home
+                  handleFilterName={this.handleFilterName}
+                  characters={characters}
+                  filterName={filterName}
+                />
               )}
             />
             <Route
