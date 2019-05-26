@@ -167,7 +167,7 @@
   line-height: 30px;
   overflow-wrap: break-word;
   width: 281px;
-  height: 310;
+  height: 240px;
   padding-left: 30px;
   .subtitle__cursive {
     font-family: "Calligraffitti", cursive;
@@ -180,9 +180,13 @@
   }
 }
 
+.character__alive {
+  padding-bottom: 50px;
+}
+
 .link__back {
   font-family: "Cinzel Decorative", serif;
-  color: black;
+  color: #2e5251;
   text-decoration: none;
 }
 

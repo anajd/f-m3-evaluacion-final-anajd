@@ -26,22 +26,28 @@ class CharacterCard extends React.Component {
             <div className="character__description">
               <h2 className="character__name--detail">
                 Name:{' '}
-                <span className="subtitle__cursive">{findCharacter.name}</span>
+                <span className="subtitle__cursive">
+                  {findCharacter.name === '' ? '-' : findCharacter.name}
+                </span>
               </h2>
               <p className="character__house--detail">
                 House:{' '}
-                <span className="subtitle__cursive">{findCharacter.house}</span>
+                <span className="subtitle__cursive">
+                  {findCharacter.house === '' ? '-' : findCharacter.house}
+                </span>
               </p>
               <p className="character__birth">
                 Birth:{' '}
                 <span className="subtitle__cursive">
-                  {findCharacter.dateOfBirth}
+                  {findCharacter.dateOfBirth === ''
+                    ? '-'
+                    : findCharacter.dateOfBirth}
                 </span>
               </p>
               <p className="character__patronus">
                 Patronus:{' '}
                 <span className="subtitle__cursive">
-                  {findCharacter.patronus}
+                  {findCharacter.patronus === '' ? '-' : findCharacter.patronus}
                 </span>
               </p>
               <p className="character__alive">
