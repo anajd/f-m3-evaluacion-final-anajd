@@ -3,6 +3,7 @@ import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
+import Footer from './Footer';
 
 class Home extends React.Component {
   render() {
@@ -10,13 +11,14 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <main>
+        <main className="app__main">
           <Filters
             filterName={filterName}
             handleFilterName={handleFilterName}
           />
           <CharacterList characters={characters} filterName={filterName} />
         </main>
+        <Footer />
       </React.Fragment>
     );
   }

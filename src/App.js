@@ -52,35 +52,30 @@ class App extends React.Component {
     const { characters, filterName } = this.state;
     return (
       <div className="app">
-        <main className="app__main">
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <Home
-                  handleFilterName={this.handleFilterName}
-                  characters={characters}
-                  filterName={filterName}
-                />
-              )}
-            />
-            <Route
-              path="/detail/:character"
-              render={takeParams => (
-                <CharacterCard
-                  takeParams={takeParams}
-                  characters={characters}
-                  filterName={filterName}
-                  resetFilters={this.resetFilters}
-                />
-              )}
-            />
-          </Switch>
-        </main>
-        <footer className="app__footer">
-          <p>Copyright &copy; 2019 Ana JD.</p>
-        </footer>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Home
+                handleFilterName={this.handleFilterName}
+                characters={characters}
+                filterName={filterName}
+              />
+            )}
+          />
+          <Route
+            path="/detail/:character"
+            render={takeParams => (
+              <CharacterCard
+                takeParams={takeParams}
+                characters={characters}
+                filterName={filterName}
+                resetFilters={this.resetFilters}
+              />
+            )}
+          />
+        </Switch>
       </div>
     );
   }
