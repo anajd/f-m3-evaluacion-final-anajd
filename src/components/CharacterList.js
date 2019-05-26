@@ -9,34 +9,32 @@ class CharacterList extends React.Component {
     return (
       <ul className="character__list">
         {characters
-          .filter(item => item.name.includes(filterName))
+          .filter(item =>
+            item.name.toLowerCase().includes(filterName.toLowerCase())
+          )
           .map(item => {
             return (
-              <li className="character__item" key={item.id}>
-                <div className="character__div">
-                  <p className="character__title">
-                    Have you seen this{' '}
-                    {item.gender === 'male' ? 'wizard' : 'witch'}?
-                  </p>
-                  <div className="character__image--wrapper">
-                    <img
-                      className="character__image"
-                      src={item.image}
-                      alt={item.name}
-                    />
+              <Link to={`/detail/${item.id}`} className="character__card--link">
+                <li className="character__item" key={item.id}>
+                  <div className="character__div">
+                    <p className="character__title">
+                      Have you seen this{' '}
+                      {item.gender === 'male' ? 'wizard' : 'witch'}?
+                    </p>
+                    <div className="character__image--wrapper">
+                      <img
+                        className="character__image"
+                        src={item.image}
+                        alt={item.name}
+                      />
+                    </div>
+                    <h2 className="character__name">{item.name}</h2>
+                    <h3 className="character__house">
+                      {item.house === '' ? '-' : item.house}
+                    </h3>
                   </div>
-                  <h2 className="character__name">{item.name}</h2>
-                  <h3 className="character__house">
-                    {item.house === '' ? '-' : item.house}
-                  </h3>
-                  <Link
-                    className="character__card--link"
-                    to={`/detail/${item.id}`}
-                  >
-                    See more
-                  </Link>
-                </div>
-              </li>
+                </li>
+              </Link>
             );
           })}
       </ul>
