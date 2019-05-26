@@ -1,0 +1,83 @@
+.character__card {
+  display: flex;
+  justify-content: center;
+  padding-top: 200px;
+}
+
+.character__detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  border: solid 2px black;
+  border-radius: 4px;
+  // padding: 18px 15px 15px 15px;
+  background-image: url("https://3.bp.blogspot.com/-IyZg8dxu6Xc/VvHw2z_Tc0I/AAAAAAAAFI4/spZ1ercKVCE3Ni7z6f2s4pEA2PN0_drSw/w1200-h630-p-k-no-nu/old-paper-texture.jpg");
+  background-position: -300px;
+  width: 650px;
+}
+
+.character__img--wrapper {
+  width: 250px;
+  height: 350px;
+  .character__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.character__description {
+  font-family: "Cinzel Decorative", serif;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  line-height: 30px;
+  overflow-wrap: break-word;
+  width: 281px;
+  height: 240px;
+  padding-left: 30px;
+  .subtitle__cursive {
+    font-family: "Calligraffitti", cursive;
+    margin-left: 8px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+  .character__house--detail {
+    padding-top: 20px;
+  }
+}
+
+.character__alive {
+  padding-bottom: 50px;
+}
+
+.link__back {
+  font-family: "Cinzel Decorative", serif;
+  color: #2e5251;
+  text-decoration: none;
+}
+
+.character__house--wrapper {
+  width: 80px;
+  height: 255px;
+  margin: -3px 20px 0 0px;
+}
+
+.character__none {
+  background: none;
+}
+
+.character__gr {
+  background-image: url(images/HouseGR.png);
+}
+
+.character__sl {
+  background-image: url(images/HouseSL.png);
+}
+.character__hu {
+  background-image: url(images/HouseHU.png);
+}
+.character__ra {
+  background-image: url(images/HouseRA.png);
+}

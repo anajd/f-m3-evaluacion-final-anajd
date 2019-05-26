@@ -1,0 +1,26 @@
+.app__div--input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 70px 0;
+}
+
+.app__input--label {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 20px;
+  font-weight: 700px;
+  letter-spacing: 5px;
+  color: #81aea7;
+  text-shadow: black 3px 3px 3px;
+}
+
+.app__input {
+  width: 150px;
+  margin-left: 20px;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  border: 0;
+  outline: none;
+  font-family: "Calligraffitti", cursive;
+  font-size: 15px;
+}

@@ -1,0 +1,13 @@
+.app__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  height: 1px;
+  padding-top: 260px;
+  width: 670px;
+  overflow: hidden;
+  background: url("images/HarryPotterLogo.png");
+}
