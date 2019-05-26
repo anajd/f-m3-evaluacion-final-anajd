@@ -84,7 +84,9 @@ class App extends React.Component {
             />
           </Switch>
         </main>
-        <footer className="app__footer" />
+        <footer className="app__footer">
+          <p>Copyright &copy; 2019 Ana JD.</p>
+        </footer>
       </div>
     );
   }
