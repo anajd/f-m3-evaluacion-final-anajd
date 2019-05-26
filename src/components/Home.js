@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import PropTypes from 'prop-types';
@@ -8,6 +9,7 @@ class Home extends React.Component {
     const { characters, filterName, handleFilterName } = this.props;
     return (
       <React.Fragment>
+        <Header />
         <main>
           <Filters
             filterName={filterName}

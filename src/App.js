@@ -52,9 +52,6 @@ class App extends React.Component {
     const { characters, filterName } = this.state;
     return (
       <div className="app">
-        <header className="app__header">
-          <h1 className="header__title">Harry Potter Character's List</h1>
-        </header>
         <main className="app__main">
           <Switch>
             <Route
