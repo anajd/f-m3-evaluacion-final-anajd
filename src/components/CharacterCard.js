@@ -85,7 +85,7 @@ class CharacterCard extends React.Component {
 }
 
 CharacterCard.propTypes = {
-  characters: PropTypes.array
+  characters: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default CharacterCard;

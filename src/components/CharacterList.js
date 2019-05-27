@@ -47,7 +47,7 @@ class CharacterList extends React.Component {
 }
 
 CharacterList.propTypes = {
-  characters: PropTypes.array,
+  characters: PropTypes.arrayOf(PropTypes.object),
   filterName: PropTypes.string
 };
 

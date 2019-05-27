@@ -25,7 +25,7 @@ class Home extends React.Component {
 }
 
 Home.propTypes = {
-  characters: PropTypes.array,
+  characters: PropTypes.arrayOf(PropTypes.object),
   filterName: PropTypes.string,
   handleFilterName: PropTypes.func
 };
