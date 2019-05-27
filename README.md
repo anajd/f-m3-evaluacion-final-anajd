@@ -20,7 +20,7 @@ In the project directory, you can run:
 
 ## ⛩ Estructura
 
-''' Index.js
+``` Index.js
   '
   ' - App.js
       ' - scss
@@ -37,7 +37,7 @@ In the project directory, you can run:
           ' - Filters.js
           ' - CharacterList.js
           ' - CharacterCard.js
-          ' - Footer.js '''
+          ' - Footer.js ```
 
 ## 👽 Bonus
 In branch 'improvements' there are bonus extras.
