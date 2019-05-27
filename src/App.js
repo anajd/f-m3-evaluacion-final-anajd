@@ -4,6 +4,7 @@ import { FetchCharacters } from './services/FetchCharacters';
 import { Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import CharacterCard from './components/CharacterCard';
+import HarryPotterSoundtrack from './audio/HarryPotterSoundtrack.mp3';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,10 +12,12 @@ class App extends React.Component {
 
     this.state = {
       characters: [],
-      filterName: ''
+      filterName: '',
+      favCharacter: []
     };
 
     this.handleFilterName = this.handleFilterName.bind(this);
+    this.handleFav = this.handleFav.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
   }
 
@@ -42,6 +45,20 @@ class App extends React.Component {
     });
   }
 
+  handleFav(event, obj) {
+    const id = parseInt(event.currentTarget.id);
+    const newFav = [...this.state.favCharacter];
+    let index = newFav.indexOf(obj);
+    if (this.state.favCharacter.includes(id) === true) {
+      newFav.splice(index, 1);
+    } else {
+      newFav.push(id);
+    }
+    this.setState({
+      favCharacter: newFav
+    });
+  }
+
   resetFilters() {
     this.setState({
       filterName: ''
@@ -49,7 +66,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { characters, filterName } = this.state;
+    const { characters, filterName, favCharacter } = this.state;
     return (
       <div className="app">
         <Switch>
@@ -61,6 +78,8 @@ class App extends React.Component {
                 handleFilterName={this.handleFilterName}
                 characters={characters}
                 filterName={filterName}
+                favCharacter={favCharacter}
+                handleFav={this.handleFav}
               />
             )}
           />
@@ -76,6 +95,7 @@ class App extends React.Component {
             )}
           />
         </Switch>
+        {/* <audio autoPlay src={HarryPotterSoundtrack} id="pDst9A3sqis" /> */}
       </div>
     );
   }
