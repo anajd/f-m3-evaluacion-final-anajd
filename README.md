@@ -1,25 +1,25 @@
-#HOGWARTS FINAL EXAM🔮
+# HOGWARTS FINAL EXAM🔮
 Harry Potter character search engine.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-ℹ️ ###About project
+ℹ️ ### About project
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) ⚛︎ .
 The stylesheet been implemented with the SASS style preprocessor. 
 
 
-🚀 ###Start
+🚀 ### Start
 In the project directory, you can run:
   `npm start`
   `npm run build`
   `npm run eject`
 
 
-🛠 ###Construido con
+🛠 ### Construido con
 React - Framework de JavaScript
 SASS - Preprocesador de estilos
 
-⛩ ###Estructura
+⛩ ### Estructura
 
 Index.js
   '
@@ -40,6 +40,6 @@ Index.js
           ' - CharacterCard.js
           ' - Footer.js
 
-👽 ###Bonus
+👽 ### Bonus
 In branch 'improvements' there are bonus extras.
 
