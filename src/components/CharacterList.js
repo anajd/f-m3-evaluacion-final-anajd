@@ -14,8 +14,12 @@ class CharacterList extends React.Component {
           )
           .map(item => {
             return (
-              <Link to={`/detail/${item.id}`} className="character__card--link">
-                <li className="character__item" key={item.id}>
+              <Link
+                to={`/detail/${item.id}`}
+                className="character__card--link"
+                key={item.id}
+              >
+                <li className="character__item">
                   <div className="character__div">
                     <p className="character__title">
                       Have you seen this{' '}

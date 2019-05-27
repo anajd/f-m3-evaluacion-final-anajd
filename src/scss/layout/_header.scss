@@ -2,12 +2,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media all and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .header__title {
   height: 1px;
-  padding-top: 260px;
-  width: 670px;
+  padding-top: 120px;
+  width: 300px;
   overflow: hidden;
-  background: url("images/HarryPotterLogo.png");
+  background: url("images/HarryPotterLogo.png") no-repeat;
+  background-size: 300px;
+  @media all and (min-width: 768px) {
+    height: 1px;
+    padding-top: 260px;
+    width: 670px;
+    overflow: hidden;
+    background: url("images/HarryPotterLogo.png");
+  }
 }

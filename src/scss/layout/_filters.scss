@@ -2,25 +2,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 0 70px 0;
+  padding: 30px 0 50px 0;
+  @media all and (min-width: 768px) {
+    padding: 30px 0 70px 0;
+  }
 }
 
 .app__input--label {
   font-family: "Cinzel Decorative", serif;
-  font-size: 20px;
-  font-weight: 700px;
-  letter-spacing: 5px;
+  font-size: 15px;
+  letter-spacing: 2px;
   color: #81aea7;
   text-shadow: black 3px 3px 3px;
+  padding-left: 30px;
+  @media all and (min-width: 768px) {
+    font-size: 20px;
+    font-weight: 700px;
+    letter-spacing: 5px;
+    color: #81aea7;
+    text-shadow: black 3px 3px 3px;
+    padding-left: 0;
+  }
 }
 
 .app__input {
-  width: 150px;
-  margin-left: 20px;
+  width: 100px;
+  margin: 0 30px 0 10px;
   padding: 8px 10px 8px 10px;
   border-radius: 5px;
   border: 0;
   outline: none;
   font-family: "Calligraffitti", cursive;
-  font-size: 15px;
+  font-size: 10px;
+  @media all and (min-width: 768px) {
+    margin-left: 0 30px 0 10px;
+    width: 150px;
+    margin-left: 20px;
+    padding: 8px 10px 8px 10px;
+    font-size: 15px;
+  }
 }
