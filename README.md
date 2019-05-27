@@ -39,6 +39,6 @@ In the project directory, you can run:
           ' - CharacterCard.js
           ' - Footer.js ```
 
-## 👽 Bonus
+👽##  Bonus
 In branch 'improvements' there are bonus extras.
 
