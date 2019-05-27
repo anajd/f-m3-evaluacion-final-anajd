@@ -1,32 +1,45 @@
-###Final examn
+#HOGWARTS FINAL EXAM🔮
 Harry Potter character search engine.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-###Start 🚀
 
-## Available Scripts
+ℹ️ ###About project
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) ⚛︎ .
+The stylesheet been implemented with the SASS style preprocessor. 
 
+
+🚀 ###Start
 In the project directory, you can run:
+  `npm start`
+  `npm run build`
+  `npm run eject`
 
-## `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+🛠 ###Construido con
+React - Framework de JavaScript
+SASS - Preprocesador de estilos
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+⛩ ###Estructura
 
-## `npm run build`
+Index.js
+  '
+  ' - App.js
+      ' - scss
+          ' - general.scss
+          ' - header.scss
+          ' - filters.scss
+          ' - characterList.scss
+          ' - characterCard.scss
+      ' - services
+          ' - FetchCharacters.js
+      ' - Components
+          ' - Home.js
+          ' - Header.js
+          ' - Filters.js
+          ' - CharacterList.js
+          ' - CharacterCard.js
+          ' - Footer.js
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👽 ###Bonus
+In branch 'improvements' there are bonus extras.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## `npm run eject`
-
-Autor ✒️
-Ana Jaime Díaz - anajd
