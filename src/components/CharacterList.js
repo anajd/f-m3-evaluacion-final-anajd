@@ -3,8 +3,24 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 class CharacterList extends React.Component {
+  filterHouses(characterList) {
+    if (this.props.houseSearch !== 'Without House') {
+      return characterList.filter(character =>
+        character.house.includes(this.props.houseSearch)
+      );
+    } else {
+      return characterList.filter(character => character.house === '');
+    }
+  }
+
   render() {
-    const { characters, filterName, favCharacter, handleFav } = this.props;
+    const {
+      characters,
+      filterName,
+      favCharacter,
+      handleFav,
+      filterHouse
+    } = this.props;
 
     return (
       <ul className="character__list">
@@ -12,6 +28,7 @@ class CharacterList extends React.Component {
           .filter(item =>
             item.name.toLowerCase().includes(filterName.toLowerCase())
           )
+          .filter(item => item.house.includes(filterHouse))
           .map(item => {
             return (
               <li className="character__item" key={item.id}>

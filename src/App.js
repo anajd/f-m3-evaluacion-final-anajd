@@ -13,12 +13,14 @@ class App extends React.Component {
     this.state = {
       characters: [],
       filterName: '',
-      favCharacter: []
+      favCharacter: [],
+      filterHouse: ''
     };
 
     this.handleFilterName = this.handleFilterName.bind(this);
     this.handleFav = this.handleFav.bind(this);
     this.resetFilters = this.resetFilters.bind(this);
+    this.handleFilterHouse = this.handleFilterHouse.bind(this);
   }
 
   componentDidMount() {
@@ -28,7 +30,8 @@ class App extends React.Component {
   getCharacters() {
     FetchCharacters().then(data => {
       const newData = data.map((item, index) => {
-        return { ...item, id: index };
+        const house = item.house === '' ? 'Without House' : item.house;
+        return { ...item, id: index, house: house };
       });
 
       this.setState({
@@ -42,6 +45,14 @@ class App extends React.Component {
 
     this.setState({
       filterName: characterName
+    });
+  }
+
+  handleFilterHouse(event) {
+    const characterHouse = event.currentTarget.value;
+
+    this.setState({
+      filterHouse: characterHouse
     });
   }
 
@@ -61,12 +72,13 @@ class App extends React.Component {
 
   resetFilters() {
     this.setState({
-      filterName: ''
+      filterName: '',
+      filterHouse: ''
     });
   }
 
   render() {
-    const { characters, filterName, favCharacter } = this.state;
+    const { characters, filterName, favCharacter, filterHouse } = this.state;
     return (
       <div className="app">
         <Switch>
@@ -80,6 +92,8 @@ class App extends React.Component {
                 filterName={filterName}
                 favCharacter={favCharacter}
                 handleFav={this.handleFav}
+                filterHouse={filterHouse}
+                handleFilterHouse={this.handleFilterHouse}
               />
             )}
           />

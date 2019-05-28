@@ -12,8 +12,13 @@ class Home extends React.Component {
       filterName,
       handleFilterName,
       favCharacter,
-      handleFav
+      handleFav,
+      filterHouse,
+      handleFilterHouse,
+      filterAlive,
+      handleFilterLive
     } = this.props;
+
     return (
       <React.Fragment>
         <Header />
@@ -21,12 +26,16 @@ class Home extends React.Component {
           <Filters
             filterName={filterName}
             handleFilterName={handleFilterName}
+            filterHouse={filterHouse}
+            handleFilterHouse={handleFilterHouse}
+            characters={characters}
           />
           <CharacterList
             characters={characters}
             filterName={filterName}
             favCharacter={favCharacter}
             handleFav={handleFav}
+            filterHouse={filterHouse}
           />
         </main>
         <Footer />
@@ -40,7 +49,8 @@ Home.propTypes = {
   filterName: PropTypes.string,
   handleFilterName: PropTypes.func,
   favCharacter: PropTypes.array,
-  handleFav: PropTypes.func
+  handleFav: PropTypes.func,
+  handleFilterHouse: PropTypes.func
 };
 
 export default Home;

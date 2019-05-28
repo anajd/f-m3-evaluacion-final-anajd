@@ -4,7 +4,7 @@ import CharacterList from './CharacterList';
 
 class Filters extends React.Component {
   render() {
-    const { handleFilterName } = this.props;
+    const { handleFilterName, handleFilterHouse } = this.props;
     return (
       <React.Fragment>
         <div className="app__div--input">
@@ -20,6 +20,19 @@ class Filters extends React.Component {
             onChange={handleFilterName}
             pattern="[A-Za-z]+"
           />
+
+          <select
+            name="app__select"
+            id="app__select"
+            onChange={handleFilterHouse}
+          >
+            <option value="">Choose a House</option>
+            <option value="Gryffindor">Gryffindor</option>
+            <option value="Slytherin">Slytherin</option>
+            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Ravenclaw">Ravenclaw</option>
+            <option value="Without House">Without house</option>
+          </select>
         </div>
       </React.Fragment>
     );
@@ -27,7 +40,8 @@ class Filters extends React.Component {
 }
 
 CharacterList.propTypes = {
-  handleFilterName: PropTypes.func
+  handleFilterName: PropTypes.func,
+  handleFilterHouse: PropTypes.func
 };
 
 export default Filters;
